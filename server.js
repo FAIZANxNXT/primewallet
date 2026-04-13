@@ -5,17 +5,20 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 
+// ⭐ IMPORTANT (ye line add karo)
+app.use(express.static(__dirname));
+
 // Home
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
-// Register page
+// Register
 app.get("/register", (req, res) => {
   res.sendFile(path.join(__dirname, "register.html"));
 });
 
-// Login page
+// Login
 app.get("/login", (req, res) => {
   res.sendFile(path.join(__dirname, "login.html"));
 });
